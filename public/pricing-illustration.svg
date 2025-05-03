@@ -1,0 +1,108 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <rect width="600" height="400" rx="12" fill="url(#paint0_linear)" opacity="0.1" />
+  
+  <!-- First plan illustration -->
+  <g transform="translate(100, 100)">
+    <rect width="100" height="160" rx="8" fill="#E5E7EB" />
+    <rect width="100" height="40" rx="8" fill="#3B82F6" />
+    <rect y="40" width="100" height="1" fill="white" opacity="0.2" />
+    
+    <text x="50" y="25" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="white">Basic</text>
+    
+    <line x1="20" y1="60" x2="80" y2="60" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" />
+    <line x1="20" y1="80" x2="80" y2="80" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" />
+    <line x1="20" y1="100" x2="60" y2="100" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" />
+    <line x1="20" y1="120" x2="70" y2="120" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" />
+    <line x1="20" y1="140" x2="50" y2="140" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" />
+    
+    <rect x="25" y="170" width="50" height="20" rx="10" fill="#3B82F6" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
+    </rect>
+  </g>
+  
+  <!-- Second plan illustration (highlighted) -->
+  <g transform="translate(250, 80)">
+    <rect width="120" height="200" rx="8" fill="white" stroke="#3B82F6" stroke-width="2" />
+    <rect width="120" height="50" rx="8" fill="url(#paint1_linear)" />
+    <rect y="50" width="120" height="1" fill="white" opacity="0.2" />
+    
+    <text x="60" y="30" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="white">Pro</text>
+    
+    <circle cx="30" cy="80" r="6" fill="#10B981" />
+    <line x1="45" y1="80" x2="90" y2="80" stroke="#6B7280" stroke-width="2" stroke-linecap="round" />
+    
+    <circle cx="30" cy="110" r="6" fill="#10B981" />
+    <line x1="45" y1="110" x2="90" y2="110" stroke="#6B7280" stroke-width="2" stroke-linecap="round" />
+    
+    <circle cx="30" cy="140" r="6" fill="#10B981" />
+    <line x1="45" y1="140" x2="90" y2="140" stroke="#6B7280" stroke-width="2" stroke-linecap="round" />
+    
+    <circle cx="30" cy="170" r="6" fill="#10B981" />
+    <line x1="45" y1="170" x2="75" y2="170" stroke="#6B7280" stroke-width="2" stroke-linecap="round" />
+    
+    <rect x="20" y="210" width="80" height="30" rx="15" fill="url(#paint1_linear)">
+      <animate attributeName="transform" attributeType="XML" type="translate" values="0,0; 0,-5; 0,0" dur="2s" repeatCount="indefinite" />
+    </rect>
+    
+    <!-- Star decoration -->
+    <path d="M110 10L114.4 18.5528H123.4549L116.5275 23.8944L120.9275 32.4472L110 27.1056L99.0725 32.4472L103.4725 23.8944L96.5451 18.5528H105.6L110 10Z" fill="#FBBF24">
+      <animate attributeName="transform" attributeType="XML" type="rotate" from="0 110 20" to="360 110 20" dur="10s" repeatCount="indefinite" />
+    </path>
+  </g>
+  
+  <!-- Third plan illustration -->
+  <g transform="translate(400, 100)">
+    <rect width="100" height="160" rx="8" fill="#E5E7EB" />
+    <rect width="100" height="40" rx="8" fill="#8B5CF6" />
+    <rect y="40" width="100" height="1" fill="white" opacity="0.2" />
+    
+    <text x="50" y="25" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="white">Enterprise</text>
+    
+    <line x1="20" y1="60" x2="80" y2="60" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" />
+    <line x1="20" y1="80" x2="80" y2="80" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" />
+    <line x1="20" y1="100" x2="80" y2="100" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" />
+    <line x1="20" y1="120" x2="80" y2="120" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" />
+    <line x1="20" y1="140" x2="80" y2="140" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" />
+    
+    <rect x="25" y="170" width="50" height="20" rx="10" fill="#8B5CF6" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
+    </rect>
+  </g>
+  
+  <!-- Animated elements -->
+  <circle cx="150" cy="50" r="15" fill="url(#paint2_linear)" opacity="0.7">
+    <animate attributeName="cy" values="50;60;50" dur="4s" repeatCount="indefinite" />
+  </circle>
+  
+  <circle cx="450" cy="350" r="20" fill="url(#paint3_linear)" opacity="0.7">
+    <animate attributeName="cy" values="350;335;350" dur="5s" repeatCount="indefinite" />
+  </circle>
+  
+  <path d="M500 100L510 120H490L500 100Z" fill="#8B5CF6">
+    <animate attributeName="transform" attributeType="XML" type="rotate" from="0 500 110" to="360 500 110" dur="15s" repeatCount="indefinite" />
+  </path>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="600" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    
+    <linearGradient id="paint1_linear" x1="0" y1="0" x2="120" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    
+    <linearGradient id="paint2_linear" x1="135" y1="50" x2="165" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#60A5FA"/>
+    </linearGradient>
+    
+    <linearGradient id="paint3_linear" x1="430" y1="350" x2="470" y2="350" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#A78BFA"/>
+    </linearGradient>
+  </defs>
+</svg> 
