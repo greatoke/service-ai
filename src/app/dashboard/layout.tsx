@@ -1,9 +1,9 @@
 import { ReactNode } from "react"
-
+import WithAuth from "@/components/with-auth"
 export default function DashboardLayout({
     children,
 }: {
     children: ReactNode
 }) {
-    return <div>{children}</div>
+    return <WithAuth>{children}</WithAuth>
 }
