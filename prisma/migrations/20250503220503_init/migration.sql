@@ -1,12 +1,11 @@
 -- CreateEnum
 CREATE TYPE "Role" AS ENUM ('OWNER', 'ADMIN', 'MEMBER');
-
 CREATE EXTENSION IF NOT EXISTS vector;
-
 -- CreateTable
 CREATE TABLE "User" (
     "id" TEXT NOT NULL,
     "name" TEXT,
+    "password" TEXT,
     "email" TEXT,
     "emailVerified" TIMESTAMP(3),
     "image" TEXT,

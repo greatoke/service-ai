@@ -4,6 +4,7 @@ import Credentials from "next-auth/providers/credentials";
 import { signInSchema } from "./lib/zod";
 import { ZodError } from "zod";
 import { prisma } from "./lib/prisma";
+import bcrypt from "bcryptjs";
 
 export default {
   providers: [
@@ -19,19 +20,22 @@ export default {
       },
       async authorize(credentials) {
         try {
-          const { email, password } = await signInSchema.parseAsync(
-            credentials
-          );
-          if (email === "greatokedev1@gmail.com" && password === "password") {
-            const user = await prisma.user.create({
-              data: {
-                email: "greatokedev1@gmail.com",
-                name: "Test User",
-              },
-            });
-            console.log("user", user);
-            return { id: user.id, name: user.name };
+          const { email, password } = credentials;
+
+          const user = await prisma.user.findUnique({
+            where: { email: email as string },
+          });
+          if (!user) {
+            return null;
           }
+
+          const passwordsMatch = await bcrypt.compare(password as string, user.password as string);
+          console.log("passwordsMatch", passwordsMatch);
+          console.log("user", user);
+          if (passwordsMatch) {
+            return { id: user.id, name: user.name, email: user.email };
+          }
+
           return null;
         } catch (error) {
           if (error instanceof ZodError) {

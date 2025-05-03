@@ -5,9 +5,11 @@ import { Button } from './button';
 import { useFormStatus } from 'react-dom';
 import { Loader2 } from 'lucide-react';
 
-type Props = {}
+type Props = {
+  text: string;
+}
 
-const CredentialsSigninButton = (props: Props) => {
+const CredentialsAuthButton = (props: Props) => {
     const {pending} = useFormStatus();
   return (
     <Button
@@ -15,9 +17,9 @@ const CredentialsSigninButton = (props: Props) => {
         className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-full transition-all hover:shadow-lg"
         disabled={pending}
       >
-        {pending ? <Loader2 className='animate-spin' /> : "Sign in"}
+        {pending ? <Loader2 className='animate-spin' /> : props.text}
       </Button>
   )
 }
 
-export default CredentialsSigninButton;
+export default CredentialsAuthButton;

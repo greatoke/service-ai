@@ -3,21 +3,19 @@ import React, { useActionState } from "react";
 import { Label } from "./label";
 import { Input } from "./input";
 import Link from "next/link";
-import CredentialsSigninButton from "./credentials-signin-button";
 import { login } from "@/actions/auth";
+import InputError from "./input-error";
+import FormError from "./form-error";
+import CredentialsAuthButton from "./credentials-auth-button";
 
 type Props = {};
 
 const CredentialsLoginForm = (props: Props) => {
   const [state, formAction] = useActionState(login, null);
-  console.log("state", state);
+
   return (
     <form action={formAction} className="space-y-6">
-        {state?.errors?.general && (
-            <div className="p-3 rounded-lg bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400 text-sm">
-              {state?.errors?.general}
-            </div>
-          )}
+      <FormError error={state?.errors?.general} />
       <div>
         <Label htmlFor="email">Email address</Label>
         <Input
@@ -31,11 +29,7 @@ const CredentialsLoginForm = (props: Props) => {
             state?.errors?.email ? "border-red-500 dark:border-red-500" : ""
           }`}
         />
-        {state?.errors?.email && (
-          <p className="mt-1 text-sm text-red-600 dark:text-red-400">
-            {state?.errors?.email}
-          </p>
-        )}
+        <InputError error={state?.errors?.email} />
       </div>
 
       <div>
@@ -59,14 +53,10 @@ const CredentialsLoginForm = (props: Props) => {
             state?.errors?.password ? "border-red-500 dark:border-red-500" : ""
           }`}
         />
-        {state?.errors?.password && (
-          <p className="mt-1 text-sm text-red-600 dark:text-red-400">
-            {state?.errors?.password}
-          </p>
-        )}
+        <InputError error={state?.errors?.password} />
       </div>
 
-      <CredentialsSigninButton />
+      <CredentialsAuthButton text="Sign in" />
     </form>
   );
 };
