@@ -39,8 +39,8 @@ export default {
             // Return `null` to indicate that the credentials are invalid
             return null;
           }
-          console.error(error);
-          return null;
+          console.error( typeof error);
+          throw error;
         }
       },
     }),
