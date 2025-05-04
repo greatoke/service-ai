@@ -1,20 +1,45 @@
 import { ReactNode } from "react"
 import WithAuth from "@/components/with-auth"
-import { DashboardHeader } from "@/components/ui/dashboard-header"
+import { DashboardLayoutWrapper } from "@/components/dashboard-layout-wrapper"
+import { auth } from "@/auth";
+import { prisma } from "@/lib/prisma";
+import { redirect } from "next/navigation";
 
-export default function DashboardLayout({
+export default async function DashboardLayout({
     children,
 }: {
     children: ReactNode
 }) {
+    const session = await auth();
+    if (!session?.user) {
+        redirect("/auth/login");
+    }
+    const user = await prisma.user.findUnique({
+        where: {
+            id: session?.user?.id
+        }
+    })
+    if (!user) {
+        redirect("/auth/login");
+    }
+    const organizations = await prisma.organization.findMany({
+        where: {
+            memberships: {
+                some: {
+                    userId: user.id
+                }
+            }
+        }
+    })
+    // if (organizations.length === 0) {
+    //     redirect("/dashboard/create-organization");
+    // }
+    
     return (
         <WithAuth>
-            <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-                <DashboardHeader />
-                <main className="container mx-auto px-4 py-6">
-                    {children}
-                </main>
-            </div>
+            <DashboardLayoutWrapper>
+                {children}
+            </DashboardLayoutWrapper>
         </WithAuth>
     )
 }

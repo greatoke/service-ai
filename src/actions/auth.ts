@@ -1,6 +1,6 @@
 "use server";
 
-import { signIn } from "@/auth";
+import { signIn, signOut } from "@/auth";
 import { hashPassword } from "@/lib/password";
 import { prisma } from "@/lib/prisma";
 
@@ -134,5 +134,21 @@ export const register = async (data: any, formData: FormData) => {
         },
       };
     }
+  }
+};
+
+export const logOut = async () => {
+  try {
+    await signOut();
+    return {
+      success: "Signed out successfully",
+    };
+  } catch (error) {
+    console.log("error==> ", error);
+    return {
+      errors: {
+        general: "Failed to sign out",
+      },
+    };
   }
 };
