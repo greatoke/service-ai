@@ -1,13 +1,13 @@
 import React from 'react'
 
 type Props = {
-    params: {
+    params: Promise<{
         organisationID: string
-    }
+    }>
 }
 
 const Settings = async ({params}: Props) => {
-    const p = params
+    const p = await params
   return (
     <div>Organisation Settings ({p.organisationID})</div>
   )
