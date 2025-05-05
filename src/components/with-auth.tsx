@@ -1,0 +1,17 @@
+import { auth } from '@/auth'
+import { redirect } from 'next/navigation';
+import React from 'react'
+
+type Props = {
+    children: React.ReactNode
+}
+
+const WithAuth = async (props: Props) => {
+  const session = await auth();
+  if (!session) {
+    redirect("/auth/login");
+  }
+  return <>{props.children}</>;
+};
+
+export default WithAuth;
