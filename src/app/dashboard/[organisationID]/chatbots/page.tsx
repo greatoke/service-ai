@@ -28,7 +28,7 @@ export default function ChatbotsPage() {
   const [searchQuery, setSearchQuery] = useState('')
   
   // Dummy data - would be replaced with actual API fetch
-  const chatbots = [
+  const chatbots: any[] = [
     // This would be populated from your database
   ]
   
