@@ -11,57 +11,6 @@ import GithubSubmitButton from "@/components/ui/github-submit-button";
 import CredentialsLoginForm from "@/components/ui/credentials-login-form";
 
 export default function LoginPage() {
-  // const router = useRouter();
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [formErrors, setFormErrors] = useState<Record<string, string>>({});
-  // const [generalError, setGeneralError] = useState<string | null>(null);
-
-  // async function handleSubmit(formData: FormData) {
-  //   setIsLoading(true);
-  //   setFormErrors({});
-  //   setGeneralError(null);
-
-  //   const email = formData.get("email") as string;
-  //   const password = formData.get("password") as string;
-
-  //   // Client-side validation
-  //   try {
-  //     signInSchema.parse({ email, password });
-  //   } catch (error) {
-  //     if (error instanceof z.ZodError) {
-  //       const errors: Record<string, string> = {};
-  //       error.errors.forEach((err) => {
-  //         if (err.path[0]) {
-  //           errors[err.path[0] as string] = err.message;
-  //         }
-  //       });
-  //       setFormErrors(errors);
-  //       setIsLoading(false);
-  //       return;
-  //     }
-  //   }
-
-  //   try {
-  //     const result = await signIn("credentials", {
-  //       email,
-  //       password,
-  //       redirect: false,
-  //     });
-
-  //     if (result?.error) {
-  //       setGeneralError("Invalid email or password. Please try again.");
-  //     } else {
-  //       // Success, redirect
-  //       router.push("/dashboard");
-  //       router.refresh();
-  //     }
-  //   } catch (error) {
-  //     console.error("Login error:", error);
-  //     setGeneralError("An unexpected error occurred. Please try again.");
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // }
 
   return (
     <div className="flex flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">

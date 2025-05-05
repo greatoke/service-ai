@@ -76,8 +76,10 @@ model Chatbot {
 
 model Organization {
   id          String        @id @default(cuid())
-  name        String
-  ownerId     String        // for default org ownership
+  name        String        @unique
+  description String?       @default("No description provided")
+  logo        String?
+  ownerId     String
   owner       User          @relation(fields: [ownerId], references: [id])
   memberships Membership[]
   chatbots    Chatbot[]

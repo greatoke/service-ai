@@ -34,7 +34,7 @@ export const login = async (data: any, formData: FormData) => {
       });
 
       return {
-        errors,
+        errors: errors,
         values: {
           email,
           password,
@@ -42,7 +42,6 @@ export const login = async (data: any, formData: FormData) => {
       };
     }
     if (error instanceof AuthError ) {
-      console.error("error +++", Object.values(error));
       return {
         errors: {
           general: "Invalid email or password",
