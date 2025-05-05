@@ -7,8 +7,7 @@ type Props = {
 }
 
 const Settings = async ({params}: Props) => {
-    const p = await params
-    console.log("==>Params: ", p)
+    const p = params
   return (
     <div>Organisation Settings ({p.organisationID})</div>
   )
